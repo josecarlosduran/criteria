@@ -22,7 +22,6 @@ class FilterOperatorTest extends TestCase
         $filterField = new FilterOperator($value);
 
         self::assertEquals($value, $filterField->getValue());
-
     }
 
 }
