@@ -8,10 +8,9 @@ use PHPUnit\Framework\TestCase;
 
 class FiltersTest extends TestCase
 {
-    /** @test  */
+    /** @test */
     public function shouldCreateAFilter(): void
     {
-
         $filterValues = [
             [
                 'field' => 'test-1',
@@ -26,19 +25,18 @@ class FiltersTest extends TestCase
         ];
 
         $filters = new Filters();
-        foreach ($filterValues as $filterValue)
-        {
-            $filters->add(Filter::createFromPrimitives($filterValue['field'], $filterValue['operator'], $filterValue['value']));
+        foreach ($filterValues as $filterValue) {
+            $filters->add(
+                Filter::createFromPrimitives($filterValue['field'], $filterValue['operator'], $filterValue['value'])
+            );
         }
 
         $pos = 0;
-        foreach ($filters->getItems() as $filter)
-        {
+        foreach ($filters->getItems() as $filter) {
             self::assertEquals($filterValues[$pos]['field'], $filter->getField()->getValue());
             self::assertEquals($filterValues[$pos]['operator'], $filter->getOperator()->getValue());
             self::assertEquals($filterValues[$pos]['value'], $filter->getValue()->getValue());
             $pos++;
         }
     }
-
 }

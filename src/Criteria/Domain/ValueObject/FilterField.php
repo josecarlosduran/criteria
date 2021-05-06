@@ -24,11 +24,9 @@ class FilterField
 
     private function ensureValueIsValid(string $value): void
     {
-        if ($value === '')
-        {
+        if ($value === '') {
             throw new DomainException('FilterField cannot be a empty string');
         }
-
     }
 
 

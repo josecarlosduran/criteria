@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace CodelyTv\Criteria\Domain\ValueObject;
@@ -13,7 +14,7 @@ final class Filters
         $this->items = [];
     }
 
-    public function add (Filter $filter) : void
+    public function add(Filter $filter): void
     {
         $this->items[] = $filter;
     }
@@ -23,9 +24,6 @@ final class Filters
     {
         return $this->items;
     }
-
-
-
 
 
 }

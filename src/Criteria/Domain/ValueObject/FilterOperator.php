@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace CodelyTv\Criteria\Domain\ValueObject;
@@ -32,11 +33,9 @@ final class FilterOperator
 
     private function ensureValueIsValid(string $value): void
     {
-        if (!in_array($value, self::VALID_VALUES))
-        {
+        if (!in_array($value, self::VALID_VALUES)) {
             throw new DomainException(sprintf('FilterOperator cannot be %s', $value));
         }
-
     }
 
 

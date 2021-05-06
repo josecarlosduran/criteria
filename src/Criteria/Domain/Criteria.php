@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace CodelyTv\Criteria\Domain;
@@ -14,8 +15,8 @@ final class Criteria
 
     public function __construct(Filters $filters, ?Orders $orders, Pagination $pagination)
     {
-        $this->filters = $filters;
-        $this->orders = $orders;
+        $this->filters    = $filters;
+        $this->orders     = $orders;
         $this->pagination = $pagination;
     }
 

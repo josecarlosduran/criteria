@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace CodelyTv\Criteria\Domain\ValueObject;
@@ -12,12 +13,12 @@ final class Filter
 
     public function __construct(FilterField $field, FilterOperator $operator, FilterValue $value)
     {
-        $this->field = $field;
+        $this->field    = $field;
         $this->operator = $operator;
-        $this->value = $value;
+        $this->value    = $value;
     }
 
-    public static function createFromPrimitives(string $field, string $operator, string $value) :self
+    public static function createFromPrimitives(string $field, string $operator, string $value): self
     {
         return new self(new FilterField($field), new FilterOperator($operator), new FilterValue($value));
     }
