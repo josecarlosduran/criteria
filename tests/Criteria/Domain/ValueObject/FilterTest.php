@@ -14,7 +14,7 @@ class FilterTest extends TestCase
         $operator = '==';
         $value = 'value';
 
-        $filter = Filter::createFromPrimitives($field, $operator, $value);
+        $filter = Filter::createFromValues($field, $operator, $value);
 
         self::assertEquals($field, $filter->getField()->getValue());
         self::assertEquals($operator, $filter->getOperator()->getValue());

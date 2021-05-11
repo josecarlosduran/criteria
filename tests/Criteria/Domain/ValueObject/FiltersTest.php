@@ -27,7 +27,7 @@ class FiltersTest extends TestCase
         $filters = new Filters();
         foreach ($filterValues as $filterValue) {
             $filters->add(
-                Filter::createFromPrimitives($filterValue['field'], $filterValue['operator'], $filterValue['value'])
+                Filter::createFromValues($filterValue['field'], $filterValue['operator'], $filterValue['value'])
             );
         }
 

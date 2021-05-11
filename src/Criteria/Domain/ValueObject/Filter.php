@@ -18,7 +18,7 @@ final class Filter
         $this->value    = $value;
     }
 
-    public static function createFromPrimitives(string $field, string $operator, string $value): self
+    public static function createFromValues(string $field, string $operator, string $value): self
     {
         return new self(new FilterField($field), new FilterOperator($operator), new FilterValue($value));
     }
