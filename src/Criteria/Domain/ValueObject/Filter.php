@@ -37,4 +37,9 @@ final class Filter
     {
         return $this->value;
     }
+
+    public function serialize(): string
+    {
+        return sprintf('%s.%s.%s', $this->field->getvalue(), $this->operator->getValue(), $this->value->getValue());
+    }
 }

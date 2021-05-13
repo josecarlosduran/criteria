@@ -10,14 +10,14 @@ class FilterTest extends TestCase
     /** @test  */
     public function shouldCreateAFilter(): void
     {
-        $field = 'test-1';
+        $field    = 'test-1';
         $operator = '==';
-        $value = 'value';
+        $value    = 'value';
+
+        $serializedValue = $field . '.' . $operator . '.' . $value;
 
         $filter = Filter::createFromValues($field, $operator, $value);
 
-        self::assertEquals($field, $filter->getField()->getValue());
-        self::assertEquals($operator, $filter->getOperator()->getValue());
-        self::assertEquals($value, $filter->getValue()->getValue());
+        self::assertEquals($serializedValue, $filter->serialize());
     }
 }

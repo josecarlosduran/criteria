@@ -4,20 +4,22 @@ declare(strict_types=1);
 
 namespace CodelyTv\Criteria\Domain;
 
-
 use CodelyTv\Criteria\Domain\ValueObject\Filters;
+use CodelyTv\Criteria\Domain\ValueObject\Order;
+use CodelyTv\Criteria\Domain\ValueObject\Pagination;
 
 final class Criteria
 {
     private Filters $filters;
-    private ?Orders $orders;
+    private ?Order $order;
     private Pagination $pagination;
 
-    public function __construct(Filters $filters, ?Orders $orders, Pagination $pagination)
+    public function __construct(Filters $filters, ?Order $order, Pagination $pagination)
     {
         $this->filters    = $filters;
-        $this->orders     = $orders;
+        $this->order      = $order;
         $this->pagination = $pagination;
     }
+
 
 }

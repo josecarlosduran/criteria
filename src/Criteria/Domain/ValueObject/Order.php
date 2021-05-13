@@ -15,6 +15,16 @@ final class Order
         $this->orderType = $orderType;
     }
 
+    public static function createDesc(string $orderByValue): self
+    {
+        return new self(new OrderBy($orderByValue), OrderType::desc());
+    }
+
+    public static function createAsc(string $orderByValue): self
+    {
+        return new self(new OrderBy($orderByValue), OrderType::asc());
+    }
+
     public function getOrderBy(): OrderBy
     {
         return $this->orderBy;
@@ -24,4 +34,5 @@ final class Order
     {
         return $this->orderType;
     }
+
 }
